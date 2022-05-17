@@ -50,3 +50,13 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& Data)
         
     }
 
+void StatsAlerter::checkAndAlert(const std::vector<float>& inputData)
+    
+{
+    alerters_input[0]->set_alert();
+    alerters_input[1]->setalert();
+    
+    break;
+        
+}
+
