@@ -40,4 +40,4 @@ TEST_CASE("average is NaN for empty array") {
 
  //   REQUIRE(emailAlert.emailSent);
  //   REQUIRE(ledAlert.ledGlows);
-}
+//   }
