@@ -1,11 +1,14 @@
 #include "stats.h"
 
-Stats Statistics::ComputeStatistics(const std::vector<___>& Data) 
+Stats Statistics::ComputeStatistics(const std::vector<float>& Data) 
 
 {
     
     
     //Implement statistics here
+    float i;
+    float sum = 0;
+    float average_loc;
     float minimum;
     float maximum;
     
@@ -25,13 +28,25 @@ Stats Statistics::ComputeStatistics(const std::vector<___>& Data)
             {
                 maximum = Data[i];
             }
+            if (minimum > Data[i])
+            {
+                minimum = Data[i];
+            }
         }
+    }
         else 
         {
-            average_loc = 0.0/0.0;
-            maximum     = 0.0/0.0;
-            minimum     = 0.0/0.0;
+            average_loc = 0.0/0.0;   //NaN
+            maximum     = 0.0/0.0;   //NaN
+            minimum     = 0.0/0.0;   //NaN
         }
         
+        Stats ComputeStatIstics1;
+        ComputeStatIstics1.average  = average_loc;
+        ComputeStatIstics1.max      = maximum;
+        ComputeStatIstics1.min      = minimum;
+        
+        return ComputeStatIstics1;
+        
     }
-}
+
