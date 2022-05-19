@@ -9,36 +9,39 @@ class Stats
     float min;
 };
 
-namespace Statistics {
+
+namespace Statistics 
+{
     Stats ComputeStatistics(const std::vector<float>& Data);
 }
 
+
 class IAlerter
-{
-    public:
-    virtual void set_alert()
-    {}
-};
+    {
+        public:
+        virtual void set_alert()
+        {}
+     };
 
 class EmailAlert : public IAlerter
-{
-    public:
-        bool emailSent;
-        void set_alert()
-        {
-            emailSent = true;
-        }
-};
+    {
+        public:
+            bool emailSent;
+            void set_alert()
+                {
+                    emailSent = true;
+                }
+    };
 
 class LEDAlert : public IAlerter
-{
-public:
-    bool ledGlows;
-    void set_alert()
     {
-        ledGlows = true;
-    }
-};
+        public:
+            bool ledGlows;
+        void set_alert()
+            {
+                ledGlows = true;
+            }
+    };
 
 
 class StatsAlerter : public EmailAlert, public LEDAlert
